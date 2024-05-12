@@ -26,5 +26,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Quản lý chứng chỉ',
     icon: 'clipboard-outline',
     link: '/pages/certificate',
+
+ 
+  },
+  {
+    title: 'Quản lý kinh nghiệm tin học',
+    icon: 'book-outline',
+    link: '/pages/informationtechnologyexperience',
+  },
+  {
+    title: 'Quản lý hoạt động',
+    icon: 'activity-outline',
+    link: '/pages/activity',
   },
 ];

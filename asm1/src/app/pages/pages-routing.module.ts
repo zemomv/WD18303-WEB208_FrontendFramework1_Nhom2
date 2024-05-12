@@ -9,6 +9,9 @@ import { SkillComponent } from './skill/skill.component';
 import { certificateComponent } from './certificate/certificate.component';
 import { recruitmentComponent } from './recruitment/recruitment.component';
 recruitmentComponent
+import { informationtechnologyexperienceComponent } from './informationtechnologyexperience/informationtechnologyexperience.component';
+import { activityComponent } from './activity/activity.component';
+
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -38,6 +41,17 @@ const routes: Routes = [{
       component: certificateComponent,
       data: {breadcrumb: 'Quản lý chứng chỉ'},
     },
+    
+    {
+      path: 'informationtechnologyexperience',
+      component: informationtechnologyexperienceComponent,
+      data: {breadcrumb: 'informationtechnologyexperience'},
+    },
+    {
+      path: 'activity',
+      component: activityComponent,
+      data: {breadcrumb: 'activity'},
+    }
   ],
 }];
 
