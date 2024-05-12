@@ -1,18 +1,18 @@
-import {Component,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 
-import { certificateData } from 'app/@core/data/certificate-table';
+import { SmartTableData } from 'app/@core/data/userinfo';
 
 @Component({
   selector: 'ngx-dashboard',
-  styleUrls: ['./certificate.component.scss'],
-  templateUrl: './certificate.component.html',
+  styleUrls: ['./user.component.scss'],
+  templateUrl: './user.component.html',
 })
-export class certificateComponent implements OnInit {
+export class userComponent implements OnInit {
   ngOnInit(): void { }
 
-  settings = {
+  users = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -32,55 +32,51 @@ export class certificateComponent implements OnInit {
         title: 'ID',
         type: 'number',
       },
-      nameCertificate: {
-        title: 'Tên chứng chỉ',
-        type: 'string',
-      },
-      issued: {
-        title: 'Tổ chức cấp',
-        type: 'string',
-      },
-      nameReceiver: {
-        title: 'Tên người nhận',
-        type: 'string',
-      },
-      dateRange: {
-        title: 'Ngày cấp',
-        type: 'date',
-      },
-      expiry: {
-        title: 'Hạn sử dụng',
-        type: 'text',
-      },
-      image: {
+      img: {
         title: 'Hình ảnh',
-        type: 'custom',
-        renderComponent: ImageRenderComponent,
+        type: 'html',
+        filter: false,
+        valuePrepareFunction: (value: any) => {
+          return `<img src="${value}" class="rounded-circle w-25"> `;
+        }
       },
+      fullname: {
+        title: 'Họ tên',
+        type: 'string',
+      },
+      birthday: {
+        title: 'Ngày sinh',
+        type: 'string',
+      },
+      address: {
+        title: 'Địa chỉ',
+        type: 'string',
+      },
+      email: {
+        title: 'E-mail',
+        type: 'string',
+      },
+      phone: {
+        title: 'Số điện thoại',
+        type: 'number',
+      },
+
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: certificateData) {
+  constructor(private service: SmartTableData) {
     const data = this.service.getData();
     this.source.load(data);
   }
 
   onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
+    if (window.confirm('Bạn chắc chắn muốn xóa?')) {
       event.confirm.resolve();
     } else {
       event.confirm.reject();
     }
   }
 
-}
-
-@Component({
-  template: '<img [src]="rowData.image" style="max-width: 100px; max-height: 100px;">',
-})
-export class ImageRenderComponent {
-  value: string;
-  rowData: any;
 }
