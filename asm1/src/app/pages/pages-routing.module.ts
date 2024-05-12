@@ -4,13 +4,9 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from './pages.component';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { userComponent } from './userinfo/user.component';
-import { SkillComponent } from './skill/skill.component';
-
-import { certificateComponent } from './certificate/certificate.component';
-import { recruitmentComponent } from './recruitment/recruitment.component';
-recruitmentComponent
 import { informationtechnologyexperienceComponent } from './informationtechnologyexperience/informationtechnologyexperience.component';
 import { activityComponent } from './activity/activity.component';
+import { SkillComponent } from './skill/skill.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,7 +15,7 @@ const routes: Routes = [{
     {
       path: 'dashboard',
       component: DashboardComponent,
-      data: {breadcrumb: 'Trang chủ'},
+      data: {breadcrumb: 'Dashboard'},
     },
     {
       path: 'userinfo',
@@ -33,15 +29,18 @@ const routes: Routes = [{
     },
     {
       path: 'recruitment',
-      component: recruitmentComponent,
+      component: SkillComponent,
       data: {breadcrumb: ' Quản lý tuyển dụng'},
     },
     {
       path: 'certificate',
-      component: certificateComponent,
+      component: SkillComponent,
       data: {breadcrumb: 'Quản lý chứng chỉ'},
     },
     
+    {
+      data: {breadcrumb: 'User'},
+    },
     {
       path: 'informationtechnologyexperience',
       component: informationtechnologyexperienceComponent,
