@@ -8,13 +8,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
   },
   {
-    title: 'Quản lí ứng tuyển',
-    icon: 'clipboard-outline',
+    title: 'Quản lý ứng tuyển',
+    icon: 'book-outline',
     link: '/pages/recruitment',
   },
   {
-    title: 'Quản lí chứng chỉ',
-    icon: 'book-outline',
+    title: 'Quản lý chứng chỉ',
+    icon: 'clipboard-outline',
     link: '/pages/certificate',
   },
 ];
