@@ -6,6 +6,7 @@ import { userComponent } from './userinfo/user.component';
 import { SkillComponent } from './skill/skill.component';
 import { certificateComponent } from './certificate/certificate.component';
 import { recruitmentComponent } from './recruitment/recruitment.component';
+import { usersComponent } from './users/users.component';
 import { informationtechnologyexperienceComponent } from './informationtechnologyexperience/informationtechnologyexperience.component';
 import { activityComponent } from './activity/activity.component';
 
@@ -17,6 +18,11 @@ const routes: Routes = [{
       path: 'dashboard',
       component: DashboardComponent,
       data: {breadcrumb: 'Trang chủ'},
+    },
+    {
+      path: 'users',
+      component: usersComponent,
+      data: {breadcrumb: 'Thông tin đăng nhập'},
     },
     {
       path: 'userinfo',
